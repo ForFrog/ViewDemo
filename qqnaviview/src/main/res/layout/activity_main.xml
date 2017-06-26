@@ -1,19 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.frog.qqnaviview.MainActivity">
+    android:layout_alignParentBottom="true"
+    android:background="#ffffff"
+    android:elevation="4dp"
+    android:orientation="horizontal"
+    android:paddingBottom="4dp"
+    tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <com.frog.qqnaviview.QQNaviView
+        android:id="@+id/qq_view_bubble"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:layout_weight="1"
+        android:gravity="center"
+        android:onClick="onClick"
+        android:orientation="horizontal"
+        app:bigIconSrc="@drawable/pre_bubble_big"
+        app:iconHeight="50dp"
+        app:iconWidth="50dp"
+        app:range="1.2"
+        app:smallIconSrc="@drawable/pre_bubble_small">
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="消息"
+            android:textSize="12sp"/>
+
+    </com.frog.qqnaviview.QQNaviView>
+
+    <com.frog.qqnaviview.QQNaviView
+        android:id="@+id/qq_view_person"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:onClick="onClick"
+        app:bigIconSrc="@drawable/pre_person_big"
+        app:iconHeight="50dp"
+        app:iconWidth="50dp"
+        app:smallIconSrc="@drawable/pre_person_small">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="联系人"
+            android:textSize="12sp"/>
+
+    </com.frog.qqnaviview.QQNaviView>
+
+    <com.frog.qqnaviview.QQNaviView
+        android:id="@+id/qq_view_star"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:onClick="onClick"
+        app:bigIconSrc="@drawable/pre_star_big"
+        app:iconHeight="50dp"
+        app:iconWidth="50dp"
+        app:smallIconSrc="@drawable/pre_star_small">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="动态"
+            android:textSize="12sp"/>
+
+    </com.frog.qqnaviview.QQNaviView>
+
+</LinearLayout>
+
