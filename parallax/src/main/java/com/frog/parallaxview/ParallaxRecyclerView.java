@@ -5,7 +5,6 @@ import android.animation.ValueAnimator;
 import android.content.Context;
 import android.support.annotation.Nullable;
 import android.support.v4.view.MotionEventCompat;
-import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -14,6 +13,7 @@ import android.view.ViewConfiguration;
 import android.view.animation.DecelerateInterpolator;
 
 /**
+ * 阻尼效果的控件
  * Created by Frog on 2017/7/10.
  */
 
@@ -34,7 +34,7 @@ public class ParallaxRecyclerView extends RecyclerView {
 
     public ParallaxRecyclerView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
-        //
+        //获取触发移动事件的最小距离
         mTouchSlop = ViewConfiguration.get(getContext()).getScaledTouchSlop();
     }
 
@@ -44,7 +44,7 @@ public class ParallaxRecyclerView extends RecyclerView {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {
-        int action = MotionEventCompat.getActionMasked(event);
+        int action = event.getActionMasked();
         if (isRestoring && action == MotionEvent.ACTION_DOWN) {
             isRestoring = false;
         }
@@ -73,12 +73,16 @@ public class ParallaxRecyclerView extends RecyclerView {
                 if (y == -1f) {
                     return super.onInterceptTouchEvent(event);
                 }
+
+                //滑动到顶部并且继续往下拉,就拦截event
                 if (isScrollToTop() && !isScrollToBottom()) {
-                    // 在顶部不在底部
+                    // 移动距离
                     float yDiff = y - mInitialMotionY;
+
                     if (yDiff > mTouchSlop && !isBeingDragged) {
                         isBeingDragged = true;
                     }
+
                 } else if (!isScrollToTop() && isScrollToBottom()) {
                     // 在底部不在顶部
                     float yDiff = mInitialMotionY - y;
@@ -106,6 +110,7 @@ public class ParallaxRecyclerView extends RecyclerView {
                 isBeingDragged = false;
                 break;
         }
+
         return isBeingDragged || super.onInterceptTouchEvent(event);
 
     }
@@ -119,6 +124,7 @@ public class ParallaxRecyclerView extends RecyclerView {
                 isBeingDragged = false;
                 break;
             case MotionEvent.ACTION_MOVE: {
+
                 float y = getMotionEventY(event);
                 if (isScrollToTop() && !isScrollToBottom()) {
                     // 在顶部不在底部
@@ -185,11 +191,11 @@ public class ParallaxRecyclerView extends RecyclerView {
     }
 
     private boolean isScrollToTop() {
-        return !ViewCompat.canScrollVertically(this, -1);
+        return !this.canScrollVertically(-1);
     }
 
     private boolean isScrollToBottom() {
-        return !ViewCompat.canScrollVertically(this, 1);
+        return !this.canScrollVertically(1);
     }
 
     private float getMotionEventY(MotionEvent event) {
@@ -198,7 +204,7 @@ public class ParallaxRecyclerView extends RecyclerView {
     }
 
     private void onSecondaryPointerUp(MotionEvent event) {
-        int pointerIndex = MotionEventCompat.getActionIndex(event);
+        int pointerIndex = event.getActionIndex();
         int pointerId = event.getPointerId(pointerIndex);
         if (pointerId == mActivePointerId) {
             int newPointerIndex = pointerIndex == 0 ? 1 : 0;
@@ -206,6 +212,9 @@ public class ParallaxRecyclerView extends RecyclerView {
         }
     }
 
+    /**
+     * 计算缩放比例
+     */
     private float calculateRate(float distance) {
         int screenHeight = getResources().getDisplayMetrics().heightPixels;
         float originalDragPercent = distance / screenHeight;
