@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ViewDemo.iml" filepath="$PROJECT_DIR$/ViewDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/parallaxview/parallaxview.iml" filepath="$PROJECT_DIR$/parallaxview/parallaxview.iml" />
       <module fileurl="file://$PROJECT_DIR$/pulluprecyclerview/pulluprecyclerview.iml" filepath="$PROJECT_DIR$/pulluprecyclerview/pulluprecyclerview.iml" />
       <module fileurl="file://$PROJECT_DIR$/qqnaviview/qqnaviview.iml" filepath="$PROJECT_DIR$/qqnaviview/qqnaviview.iml" />
     </modules>
