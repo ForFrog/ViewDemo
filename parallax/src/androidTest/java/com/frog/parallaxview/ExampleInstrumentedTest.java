@@ -1,4 +1,4 @@
-package all.parttimeguidesystem.lib.parallaxview;
+package com.frog.parallaxview;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("all.parttimeguidesystem.lib.parallaxview", appContext.getPackageName());
+        assertEquals("com.frog.parallax", appContext.getPackageName());
     }
 }

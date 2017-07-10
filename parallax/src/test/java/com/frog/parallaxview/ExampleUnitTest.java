@@ -1,4 +1,4 @@
-package all.parttimeguidesystem.lib.parallaxview;
+package com.frog.parallaxview;
 
 import org.junit.Test;
 

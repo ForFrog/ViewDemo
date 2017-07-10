@@ -1,1 +1,1 @@
-include ':app', ':pulluprecyclerview', ':qqnaviview', ':parallaxview'
+include ':app', ':pulluprecyclerview', ':qqnaviview', ':parallax'
