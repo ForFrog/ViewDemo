@@ -1,4 +1,4 @@
-package com.frog.viewdemo.w;
+package com.frog.viewdemo.widget;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -11,8 +11,6 @@ import android.graphics.Point;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.Typeface;
-import android.support.annotation.IntRange;
-import android.support.annotation.Nullable;
 import android.text.TextPaint;
 import android.util.AttributeSet;
 import android.util.Log;

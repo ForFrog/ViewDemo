@@ -1,4 +1,4 @@
-package com.frog.viewdemo.w;
+package com.frog.viewdemo.widget;
 
 import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
