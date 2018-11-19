@@ -56,7 +56,7 @@ public class ZhiMaFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_zhi_ma, container, false);
 
         CreditSesameView creditSesameView = (CreditSesameView) view.findViewById(R.id.sesame_view);
-        creditSesameView.setSesameValues(600);
+        creditSesameView.setSesameValues(900);
 
         return view;
     }
