@@ -1,12 +1,3 @@
-*.iml
-.gradle
-/local.properties
-/.idea/workspace.xml
-/.idea/libraries
-.DS_Store
-/build
-/captures
-.externalNativeBuild
 ### Android template
 # Built application files
 *.apk
@@ -43,7 +34,7 @@ proguard/
 captures/
 
 # IntelliJ
-
+*.iml
 .idea/workspace.xml
 .idea/tasks.xml
 .idea/gradle.xml
@@ -57,7 +48,7 @@ captures/
 #*.jks
 
 # External native build folder generated in Android Studio 2.2 and later
-
+.externalNativeBuild
 
 # Google Services (e.g. APIs or Firebase)
 google-services.json
