@@ -15,4 +15,14 @@
         android:padding="10dp"
         android:text="芝麻信用分" />
 
+
+    <TextView
+        android:id="@+id/tv_2"
+        android:onClick="onClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="个人主页" />
+
 </LinearLayout>

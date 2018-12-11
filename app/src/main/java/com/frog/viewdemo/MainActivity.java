@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.tv_1:
                 startActivity(new Intent(this, ViewActivity.class));
+                break;  case R.id.tv_2:
+                startActivity(new Intent(this,UserPageActivity.class));
                 break;
         }
     }
